@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function f1(){
+            
+            let n1=document.getElementById("i1").value
+            let n2=document.getElementById("i2").value
+            switch(document.getElementById("s1").value){
+                 
+             
+                case "+" :   
+                
+            let add=parseInt(n1) + parseInt(n2)
+                document.getElementById("p1").innerText = ` ${n1} + ${n2}=${add}`
+                break;
+                case "-" : 
+                let sub=parseInt(n1) - parseInt(n2)
+                document.getElementById("p1").innerText = ` ${n1} - ${n2}=${sub}`
+                break;
+                case "*" : 
+                let mul=parseInt(n1) * parseInt(n2)
+                document.getElementById("p1").innerText = ` ${n1} * ${n2}=${mul}`
+                break;
+                case "/" :
+                let div=parseInt(n1) / parseInt(n2) 
+                document.getElementById("p1").innerText = ` ${n1} / ${n2}=${div}`
+                break;
+                case "%" : 
+                let mod=parseInt(n1) % parseInt(n2) 
+                document.getElementById("p1").innerText = ` ${n1} % ${n2}=${mod}`
+               
+               
+                
+            }
+          
+          
+        }
+    </script>
+</head>
+<body>
+   num1:<input type="number" value="0" id="i1">
+   num2:<input type="number" value="0" id="i2">
+    choice:<select id="s1" onchange="f1()" >
+        <option  >select</option>
+        <option  value="+">+</option>
+        <option  value="-">-</option>
+        <option  value="*">*</option>
+        <option  value="/">/</option>
+        <option  value="%">%</option>
+    </select>
+    <p id="p1"></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script>
+     function f1(){
+         let v=document.getElementById("i1").value
+         let d=new Date(v)
+         let currdate=new Date();
+         let diff=currdate - d
+        let year=(diff/(24*60*60*1000)/365)
+         document.getElementById("p1").innerText=parseInt(year)
+     }
+ </script>
+</head>
+<body>
+    <input type="date" id="i1" onchange="f1()">
+    <p id="p1"></p>
+</body>
+</html>

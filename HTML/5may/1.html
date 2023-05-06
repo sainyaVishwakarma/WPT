@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  function f1(){
+      let ch=document.getElementById("c1")
+      if(ch.checked){
+        document.getElementById("i1").readOnly = true
+      }
+      else{
+        document.getElementById("i1").readOnly = false
+      }
+  }
+  </script>
+</head>
+<body>
+    <input type="text" id="i1"><br>
+    <label>Check to enter</label>
+    <input type="checkbox" id="c1" onchange="f1()">
+
+</body>
+</html>
