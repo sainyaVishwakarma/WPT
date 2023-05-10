@@ -1,0 +1,35 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $().ready(()=>{
+                    $("#d1").click(()=>{
+                        let x= $("#d1").data("mylines")
+                        let str=$("#d1").text()
+                        let len =str.length
+                        let finalstr=""
+                        let a=0
+                        let b=len/x
+                        for(let i=0;i<x;i++){
+                            let part=str.slice(a,b)
+                            finalstr=finalstr.concat(part+"<br>")
+                            a=b
+                            b=b+len/x
+                        }
+                        $("#p1").html(finalstr)
+                    })
+
+                    $("#b1").click(()=>{
+                        let y=$("#d1").data("mylines")
+                        $("#d1").data("mylines",y+1)
+                    })
+                })
+            </script>
+    </head>
+    <body>
+        <div id="d1" data-mylines="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl velit, bibendum mollis lobortis eu, tincidunt in turpis. In quis dui vel eros congue mattis eu ut dolor. Vestibulum faucibus lectus malesuada fringilla vestibulum. Aenean convallis leo consectetur, tincidunt lorem sed, imperdiet mi. Nam eget tempor neque, non scelerisque metus. Fusce vestibulum mauris eu justo semper, quis mollis risus fermentum. In erat elit, facilisis et lorem a, euismod interdum purus. Suspendisse egestas blandit lobortis. Donec dui nulla, accumsan nec augue et, mattis commodo arcu.
+        </div>
+        <p id="p1"></p>
+        <button id="b1">INCR LINE</button>
+    </body>
+</html>

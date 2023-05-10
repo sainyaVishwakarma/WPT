@@ -1,0 +1,37 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $().ready(()=>{
+                    for(let i=1;i<=10;i++){
+                            $("#s1").append(`<option value=${i}>${i}</option>`)
+                        }
+                        for(let i=1;i<=10;i++){
+                            $("#s2").append(`<option value=${i}>${i}</option>`)
+                        }
+                  $("#b1").click(()=>{
+                      let num=$("#i1").val()
+                    //   let m=$("#s1").val()
+                      let n=$("#s2").val()
+                      for(let i=1;i<=n;i++){
+                            $("#i2").append(`<tr><td value= ${num*i}>${num}*${i}</td></tr>`)
+                            $("#i3").append(`<tr><td value= ${num*i}>${num*i}</td></tr>`)
+                        }
+                  })
+                })
+            </script>
+    </head>
+    <body>
+       
+       <input type="number" id="i1"><br><br>
+       from:<select id="s1"></select>
+       upto:<select id="s2"></select>
+        <button id="b1">SHOW</button>
+        <table  border="2">
+            <tr id="r1">
+                <td id="i2"></td>
+                <td id="i3"></td>
+            </tr>
+        </table>
+    </body>
+</html>

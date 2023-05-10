@@ -1,0 +1,21 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $().ready(()=>{
+                    $("#i1").change(()=>{
+                        let x=$("#i1").val()
+                        let mul=1;
+                        for(let i=x;i>=1;i--){
+                            mul=mul*i;
+                        }
+                        $("#p1").text(mul)
+                    })
+                })
+            </script>
+    </head>
+    <body>
+        <input type="number" id="i1">
+        <p id="p1"></p>
+    </body>
+</html>

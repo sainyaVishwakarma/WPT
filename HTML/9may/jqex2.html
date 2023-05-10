@@ -1,0 +1,24 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $().ready(()=>{
+                    console.log("Hello...")
+
+                    // $("#b1").click(()=>{
+                    //     $("#b2").val("Hello")
+                    // })
+
+                        $("#b1").click(()=>{
+                       let d=new Date()
+                       let result=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()
+                       $("#b2").val(result)
+                    })
+                })
+            </script>
+    </head>
+    <body>
+        <button id="b1">show</button>
+        <input type="text" id="b2">
+    </body>
+</html>

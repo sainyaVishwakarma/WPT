@@ -1,0 +1,54 @@
+<html>
+    <head>
+
+            <style>
+                    #d1{
+                        position: absolute;
+                        background-color: darkcyan;
+                        font-style: italic;
+                        font-size: 25px;
+                        text-align: center;
+                        border: 3px solid darkgreen;
+                        /* width: fit-content; */
+                        width: 280px;
+                        padding: 10px;
+                    }
+                </style>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script>
+                $().ready(function()
+                {
+                    $("#b1").click(function()
+                    {
+                    
+                    $("#d1").animate({right:'10px'},"slow")
+                     $("#d1").animate({left:'10px'},"slow")
+
+                      $("#d1").animate({right:'740px'},"slow")
+                       $("#d1").animate({left:'740px'},"slow")
+
+                       $("#d1").animate({left:'10px'},"slow")
+
+                     $("#d1").animate({right:'740px'},"slow")
+                      $("#d1").animate({left:'740px'},"slow")
+
+                      $("#d1").animate({left:'10px'},"slow")
+
+                        $("#d1").animate({right:'740px'},"slow")
+                        $("#d1").animate({left:'740px'},"slow")
+                   
+                   
+                        $("#d1").animate({left:'10px'},"slow")
+                    })
+                
+                })
+            </script>
+           
+    </head>
+    <body>
+       <div id="d1" >The best is yet to come</div>
+       <br><br><br><br><br>
+       
+       <button id="b1">click to move</button>
+    </body>
+</html>
