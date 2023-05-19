@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $("#b1").click(()=>{
+                    $.get("message",(responsedata)=>{
+                        console.log(responsedata)
+                        $("#p1").html(`<h3>Message:${responsedata.message}</h3>`)
+                        $("#p2").html(`<h3>Sender:${responsedata.sender}</h3>`)
+                    })
+                })
+
+                 
+                $("#b2").click(()=>{
+                    let v=$("#num").val()
+                    let obj={n:v}
+
+                    $.ajax(
+                        {
+                        url:'square',
+                        type:'post',
+                        data:  JSON.stringify(obj),
+                        success: function(respdata){
+                            $("#p3").html(`<h3>Square:${respdata.sqr}<h3>`)
+                        },
+                        beforeSend: function(request){
+                            request.setRequestHeader('content-type','application/json')
+                        }
+                        }
+                    )
+                })
+         
+            })
+
+
+          
+        </script>
+    </head>
+    <body>
+        <h1>Ajax using jquery!!</h1>
+        <input type="button" value="getmsg" id="b1"/>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <input type="number" id="num">
+        <input type="button" id="b2" value="postmsg">
+        <p id="p3"></p>
+    </body>
+</html>
