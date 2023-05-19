@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script>
+           function msg(){
+            let http = new XMLHttpRequest()
+      
+            http.open("get","http://localhost:5000/message")
+            http.onload=function()
+            {
+                let jsonobj = JSON.parse(http.response)
+                console.log(http.response)
+                document.getElementById("p1").innerHTML=`<h5>Message:${jsonobj.message}</h5>`
+                document.getElementById("p2").innerHTML=`<h5>Sender:${jsonobj.sender}</h5>`
+            }
+            http.send()
+           } 
+
+           function postmsg()
+           {
+
+            let v=document.getElementById("num").value
+            let obj={n:v}
+            let http =new XMLHttpRequest()
+            http.open("post","http://localhost:5000/square")
+          
+
+            http.onload=function()
+            {
+                let jsonobj = JSON.parse(http.response)
+                console.log(http.response)
+                document.getElementById("p3").innerHTML=`<h3>square: ${jsonobj.sqr}</h3>`
+            }
+              http.setRequestHeader("content-type","application/json")
+            http.send(JSON.stringify(obj))
+           
+           }
+        </script>
+    </head>
+    <body>
+        <h1>Ajax using vanilla javascript!!</h1>
+        <input type="button" value="getmsg" onclick="msg()"/>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <input type="number" id="num"/>
+        <input type="button" value="postbtn" onclick="postmsg()"/>
+        <p id="p3"></p>
+    </body>
+</html>
