@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+        function validate(){
+            let v=document.getElementById("i1")
+           
+            let u=document.getElementById("t1")
+            if(u.checkValidity() && v.checkValidity()){
+                document.getElementById("p1").innerText="OK"
+                
+            }else{
+                document.getElementById("p1").innerText=v.validationMessage
+            }
+        }    
+        </script>
+    </head>
+    <body>
+        <form action="./welcome.html">
+
+        
+        Date of joining:<input type="date" min="01-01-2023" max="31-12-2023" id="i1" required>
+        <br>
+        <br>
+        Job description:<textarea id="t1" minlength="20" maxlength="500" ></textarea>
+        <button onclick="validate()">submit</button>
+        <p id="p1"></p>
+    </form>
+    </body>
+</html>

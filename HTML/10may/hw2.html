@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script>
+            
+            function validate(){
+                let s=document.forms.form1.sname.value
+                let res,namev,agev,emailv,addv
+                if(s.trim()=="" || s.length<2 || !isNaN(s)){
+                    alert("name must be in specific format")
+                    document.forms.form1.sname.focus()
+                    namev= false;
+                }
+                else{
+                       namev= true;
+                   }
+               
+                   let d=document.forms.form1.sage.value
+                    if(d<18 || d>100){
+                        alert("age must be in between 18-100")
+                      agev= false;
+                      document.forms.form1.sage.focus()
+                    }else{
+                        agev=true;
+                    }
+
+                    let e=document.forms.form1.smail.value
+                    let atpos=e.indexOf("@")
+                    let dotpos=e.lastIndexOf(".")
+
+                    if(atpos<1 || (dotpos - atpos <2)){
+                        alert("please enter correct emailId")
+                        emailv=false;
+                    }else {
+                        emailv=true
+                    }
+                    let a=document.forms.form1.sadd.value   
+                    if(a.indexOf("pune")<0){
+                        alert("applicable for pune resident")
+                        addv=false;
+                        document.forms.form1.sadd.focus()
+                    } else{
+                        addv=true
+                    }
+                    return namev && agev && emailv && addv
+            }          
+        </script>
+    </head>
+    <body>
+        <form name="form1" onsubmit="return validate()" style="border:5px solid black;width:fit-content;padding:20px" action="../9may/hw4.html">
+           Name: <input type="text" name="sname"><br><br>
+           Age:<input type="number" name="sage"><br><br>
+           Email:<input type="text" name="smail"><br><br>
+           Address:<textarea name="sadd"></textarea><br><br>
+           <button>submit</button>
+        </form>
+    </body>
+</html>
